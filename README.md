@@ -1,2 +1,2 @@
-# ShoppingCart
-Implementation of a sortable shopping cart with Angular 4.
+# D3 Visuals
+Visualizations using GoogleCharts, C3 and D3
