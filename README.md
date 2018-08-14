@@ -1,2 +1,2 @@
 # D3 Visuals
-Visualizations using GoogleCharts, C3 and D3
+Donut Chart with fake data and GC Chart with fake data! 
