@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Load Bootstrap styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Type', 'Number of users'],
+                ['New', 66],
+                ['Returning', 134]
+
+            ]);
+
+            var options = {
+                title: 'New vs returning users',
+                pieHole: 0.55,
+                legend: {
+                    position: "labeled"
+                },
+                slices: {
+                    0: { color: '#DCABDF' },
+                    1: { color: '#C792DF' }
+                },
+                pieStartAngle: 250,
+                chartArea: {
+                    // leave room for y-axis labels
+                    width: '75%',
+                    height: '60%'
+                },
+
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+    <!--Div that will hold the pie chart-->
+    <div class="container">
+        <div class="col-xs-6">
+            <h6 class="p-b-sm p-t-sm m-b-xl">New and returning users - GC</h6>
+            <div id="donutchart" style="width: 650px; height: 500px;"></div>
+
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        background: white;
+    }
+
+    h6 {
+        border-bottom: solid black 1px;
+    }
+</style>
+
+</html>
